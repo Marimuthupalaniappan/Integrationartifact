@@ -45,7 +45,9 @@ pipeline {
 						httpMode: 'POST', 
 						responseHandle: 'LEAVE_OPEN', 
 						timeout: 30, 
-						url: 'https://' + env.CPIOAuthHost + '/oauth2/apitoken/v1?grant_type=client_credentials';
+						//url: 'https://' + env.CPIOAuthHost + '/oauth2/apitoken/v1?grant_type=client_credentials';
+						//url: 'https://' + env.CPIOAuthHost + '/oauth/token?grant_type=client_credentials';
+						url: 'https://' + env.CPIOAuthHost + '/oauth2/apitoken/v1';
 					def jsonObjToken = readJSON text: getTokenResp.content
 					token = "Bearer " + jsonObjToken.access_token
 				   	} catch (Exception e) {
