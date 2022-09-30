@@ -35,9 +35,6 @@ pipeline {
 							url: 'https://' + env.GITRepositoryURL
 						]]
 					])
-					useProxy: true,
-             				pHost: 'rb-proxy-de.bosch.com',
-             				pPort: 8080,
 					//get token
 					println("Request token");
 					def token;
