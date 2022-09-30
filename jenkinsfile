@@ -3,7 +3,7 @@ pipeline {
 
 	//Configure the following environment variables before executing the Jenkins Job	
 	environment {
-		IntegrationFlowID = "CID_Attchement_URL_test"
+		IntegrationFlowID = "rb.CI.AdminTools.Custom_Role"
 		CPIHost = "${env.MY_CPI_HOST}"
 		CPIOAuthHost = "${env.MY_CPI_OAUTH_HOST}"
 		CPIOAuthCredentials = "${env.MY_CPI_OAUTH_CRED}"	
