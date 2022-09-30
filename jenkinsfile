@@ -46,6 +46,9 @@ pipeline {
 						httpMode: 'POST', 
 						responseHandle: 'LEAVE_OPEN', 
 						timeout: 30, 
+						useProxy: true,
+             					pHost: 'rb-proxy-de.bosch.com',
+             					pPort: 8080,
 						//url: 'https://' + env.CPIOAuthHost + '/oauth/token?grant_type=client_credentials' +''+ '--proxy rb-proxy-unix-de01.bosch.com:8080';
 						url: 'https://' + env.CPIOAuthHost + '/oauth/token?grant_type=client_credentials';
 						//url: 'https://' + env.CPIOAuthHost + '/oauth/token?';
