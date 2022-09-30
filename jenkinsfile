@@ -39,6 +39,9 @@ pipeline {
 					println("Request token");
 					def token;
 					try{
+					environment { 
+    						HTTP_PROXY = 'http://rb-proxy-de.bosch.com:8080'
+						}
 					def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON', 
 						authentication: env.CPIOAuthCredentials, 
 						contentType: 'APPLICATION_JSON', 
