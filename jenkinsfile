@@ -12,7 +12,6 @@ pipeline {
 		GITBranch = "${env.MY_GIT_BRANCH_NAME}"
 		GITFolder = "IntegrationContent/IntegrationArtefacts"
 		GITComment = "Integration Artefacts update from CICD pipeline"
-		//HTTP_PROXY = 'http://rb-proxy-de.bosch.com:8080'
 		HTTP_PROXY = "${env.MY_HTTP_PROXY}"
    	}
 	
@@ -40,7 +39,7 @@ pipeline {
 					println("Request token");
 					def token;
 					try{
-						def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON', 
+						def getTokenResp = httpRequest httpProxy: 'http://rb-proxy-sl.rbesz01.com:8080',acceptType: 'APPLICATION_JSON', 
 						authentication: env.CPIOAuthCredentials, 
 						contentType: 'APPLICATION_JSON', 
 						httpMode: 'POST', 
@@ -59,7 +58,7 @@ pipeline {
 					//download and extract artefact from tenant
 					println("Downloading artefact");
 					def tempfile = UUID.randomUUID().toString() + ".zip";
-					def cpiDownloadResponse = httpRequest acceptType: 'APPLICATION_ZIP', 
+					def cpiDownloadResponse = httpRequest httpProxy: 'http://rb-proxy-sl.rbesz01.com:8080',acceptType: 'APPLICATION_ZIP', 
 						customHeaders: [[maskValue: false, name: 'Authorization', value: token]], 
 						ignoreSslErrors: false, 
 						responseHandle: 'LEAVE_OPEN', 
