@@ -4,12 +4,12 @@ pipeline {
 	//Configure the following environment variables before executing the Jenkins Job	
 	environment {
 		IntegrationFlowID = "rb.c.mdm.mdmcloudservice.icpm.test.odata"
-		CPIHost = "${env.MY_CPI_HOST}"
-		CPIOAuthHost = "${env.MY_CPI_OAUTH_HOST}"
-		CPIOAuthCredentials = "${env.MY_CPI_OAUTH_CRED}"	
-		GITRepositoryURL  = "${env.MY_GIT_REPOSITORY_URL}"
-		GITCredentials = "${env.MY_GIT_CRED}"
-		GITBranch = "${env.MY_GIT_BRANCH_NAME}"
+		CPIHost = "${env.CPI_HOST}"
+		CPIOAuthHost = "${env.CPI_OAUTH_HOST}"
+		CPIOAuthCredentials = "${env.CPI_OAUTH_CRED}"	
+		GITRepositoryURL  = "${env.GIT_REPOSITORY_URL}"
+		GITCredentials = "${env.GIT_CRED}"
+		GITBranch = "${env.GIT_BRANCH_NAME}"
 		GITFolder = "IntegrationContent/IntegrationArtefacts"
 		GITComment = "Integration Artefacts update from CICD pipeline"
 		HTTP_PROXY = "${env.MY_HTTP_PROXY}"
