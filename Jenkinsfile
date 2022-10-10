@@ -85,6 +85,7 @@ pipeline {
 					dir(folder){
 						println("Now in the git add command place")
 						sh 'git add .'
+						println("After the git add command")
 					}
 					println("Store integration artefact in Git")
 					withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: env.GITCredentials ,usernameVariable: 'GIT_AUTHOR_NAME', passwordVariable: 'GIT_PASSWORD']]) {  
