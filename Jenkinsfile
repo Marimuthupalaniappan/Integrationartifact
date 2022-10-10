@@ -83,6 +83,7 @@ pipeline {
 					fileOperations([fileDeleteOperation(excludes: '', includes: tempfile)])
 					println("After fileDeleteOperation")	
 					dir(folder){
+						println("Now in the git add command place")
 						sh 'git add .'
 					}
 					println("Store integration artefact in Git")
